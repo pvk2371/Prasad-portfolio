@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif-cormorant: "Cormorant Garamond", Georgia, serif;
+  --font-serif-playfair: "Playfair Display", Georgia, serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-luxury-white: #FFFFFF;
+  --color-luxury-off-white: #FAF9F7;
+  --color-luxury-beige: #F5EFE6;
+  --color-luxury-sand: #DCCBB2;
+  --color-luxury-oak: #B08968;
+  --color-luxury-walnut: #7F5539;
+  --color-luxury-dark-wood: #5C4033;
+  --color-luxury-charcoal: #2B2B2B;
+  --color-luxury-gold: #C9A227;
+  --color-luxury-light-gray: #F4F4F4;
+}
+
+/* Custom Scrollbar styled for natural wood luxury theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-luxury-off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-luxury-sand);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-luxury-oak);
+}
+
+/* Custom Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-luxury-off-white);
+  color: var(--color-luxury-charcoal);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Elegant Text Reveal Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Wood grain subtle overlay */
+.wood-grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Smooth custom cursor interactive adjustments */
+.custom-cursor-hover {
+  transform: translate(-50%, -50%) scale(1.8);
+  background-color: rgba(127, 85, 57, 0.1) !important;
+  border: 1px solid var(--color-luxury-gold) !important;
+}
